@@ -7,33 +7,16 @@ $(function() {
     var newSentence = sentence;  // not necessary, but I like it
 
     for (var i = 0; i < newSentence.length; i++) {
-      if (vowels.indexOf(newSentence[i]) > -1) {
-        newSentence = newSentence.replace(newSentence[i], '-');
+      if (vowels.indexOf(newSentence[i]) > -1) {  // if letter isn't equal to vowel
+        newSentence = newSentence.replace(newSentence[i], '-'); // replace letter w/dash
       }
     }
-    console.log(newSentence);
 
-    //  Nested for loops, old and klunky!
-    // Need to loop through string first, then vowels second!
-    // for (var j = 0; j < newSentence.length; j++) { // loop through string
-    //   for (var i = 0; i < vowels.length; i++) {  // loop through vowels
-    //     if (newSentence[j].indexOf(vowels[i]) !== -1) {
-    //        newSentence[j].replace(vowels[i], '-');
-    //
-    //     } else {
-    //
-    //     }
-    //
-    //   }  // for loop
-    // } // for loop
-
-
-
+    $('.results').append('<h3>Your new phrase:</h3><h4>' + newSentence + '</h4>');
+    document.getElementById('sentence').value='';  // clear input field on submit
+    // $('#sentence').value() = '';  // DOES NOT WORK
 
   });
-
-  // uses a method to replace vowels in a string with the dash symbol "-"
-  //  Hide the original string when you show the resulting word puzzle, so that another person can try and guess it.
 
 
 
