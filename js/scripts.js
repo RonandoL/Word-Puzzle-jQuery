@@ -3,18 +3,20 @@ $(function() {
     event.preventDefault();
 
     var vowels = ['a', 'e', 'i', 'o', 'u'];
-    var sentence = ($('input.sentence').val()).split(); // is an array
+    var sentence = ($('.sentence').val()).split(); // is an array
     var newSentence = [];
-// debugger;
-    for (var i = 0; vowels.length; i++) {
-      if (sentence.indexOf(vowels[i]) !== -1) {
-        newSentence.push('-');  // doesn't work
-      } else {
-        newSentence.push(vowels[i]);
 
-      }
-    }
-    console.log(newSentence);
+    for (var i = 0; i < vowels.length; i++) {  // loop through vowels
+      for (var j = 0; j < sentence.length; j++) { // loop through string
+        if (sentence.indexOf(vowels[i]) === -1) {
+          newSentence.push(sentence[j]);
+        } else {
+          newSentence.push('-');
+        }
+        console.log(newSentence);
+      }  // for loop - nested
+    } // for loop - outer
+
 
   });
 
